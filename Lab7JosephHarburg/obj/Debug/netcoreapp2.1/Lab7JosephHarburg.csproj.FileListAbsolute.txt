@@ -8,3 +8,4 @@ C:\Users\josep\Desktop\coding\C#\Lab7JosephHarburg\Lab7JosephHarburg\obj\Debug\n
 C:\Users\josep\Desktop\coding\C#\Lab7JosephHarburg\Lab7JosephHarburg\obj\Debug\netcoreapp2.1\Lab7JosephHarburg.AssemblyInfo.cs
 C:\Users\josep\Desktop\coding\C#\Lab7JosephHarburg\Lab7JosephHarburg\obj\Debug\netcoreapp2.1\Lab7JosephHarburg.dll
 C:\Users\josep\Desktop\coding\C#\Lab7JosephHarburg\Lab7JosephHarburg\obj\Debug\netcoreapp2.1\Lab7JosephHarburg.pdb
+C:\Users\josep\Desktop\coding\C#\Lab7JosephHarburg\Lab7JosephHarburg\obj\Debug\netcoreapp2.1\Lab7JosephHarburg.csprojAssemblyReference.cache
