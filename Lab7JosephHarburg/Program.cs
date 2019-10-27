@@ -7,69 +7,140 @@ namespace Lab7JosephHarburg
     {
         static void Main(string[] args)
         {
-            Name();
-            Email();
-            Phone();
-            Date();
+            bool repeat = true;
+            while (repeat)
+            {
+                Name();
+                Email();
+                Phone();
+                Date();
+                HtmlTags();
+                Console.WriteLine("Do you want to try again?");
+                string response = Console.ReadLine().ToLower();
+                while (response != "y")
+                {
+                   
+                    if (response != "y" && response != "n")
+                    {
+                        Console.WriteLine("Please enter a y or n");
+                        response = Console.ReadLine().ToLower();
+                    }
+                    else if (response == "y")
+                    {
+                        Console.WriteLine("Great! Lets do it again!");
+                        
+                       
+                    }
+                    else if (response == "n")
+                    {
+                       Console.WriteLine("Thanks for using my program!");
+                       response = "y";
+                       repeat = false;
+                        
+                    }
+                }
+            }
         }
         public static void Name()
         {
-            Console.WriteLine("Please enter your name!");
-            string nameInput = Console.ReadLine();
-            Match nameValidate = Regex.Match(nameInput, "(^[A-Z][a-z]{1,30})");
-            if (nameValidate.Success)
+            bool repeat = true;
+            while (repeat)
             {
-                Console.WriteLine($"Hello {nameInput}!");
-            }
-            else
-            {
-                Console.WriteLine("Im sorry thats not a valid name!");
+                Console.WriteLine("Please enter your name!");
+                string nameInput = Console.ReadLine();
+                Match nameValidate = Regex.Match(nameInput, "(^[A-Z][a-z]{1,30})");
+                if (nameValidate.Success)
+                {
+                    Console.WriteLine($"Hello {nameInput}!");
+                    repeat = false;
+                }
+                else
+                {
+                    Console.WriteLine("Im sorry thats not a valid name!");
+                    
+                }
             }
         }
 
         public static void Email()
         {
-            Console.WriteLine("Please enter your email!");
-            string emailInput = Console.ReadLine();
-            Match emailValidate = Regex.Match(emailInput, @"([A-Za-z0-9]{5,30}@{1}[A-Za-z0-9]{5,10}\.{1}[A-Za-z0-9]{2,3}$)");
-            if (emailValidate.Success)
+            bool repeat = true;
+            while (repeat)
             {
-                Console.WriteLine($"Your Email is {emailInput}!");
-            }
-            else
-            {
-                Console.WriteLine("Im sorry thats not a valid email!");
+                Console.WriteLine("\nPlease enter your email!");
+                string emailInput = Console.ReadLine();
+                Match emailValidate = Regex.Match(emailInput, @"([A-Za-z0-9]{5,30}@{1}[A-Za-z0-9]{5,10}\.{1}[A-Za-z0-9]{2,3}$)");
+                if (emailValidate.Success)
+                {
+                    Console.WriteLine($"Your Email is {emailInput}!");
+                    repeat = false;
+                }
+                else
+                {
+                    Console.WriteLine("Im sorry thats not a valid email!");
+                }
             }
         }
         public static void Phone()
         {
-            Console.WriteLine("Please enter your Phone Number!");
-            string phoneInput = Console.ReadLine();
-            Match phoneValidate = Regex.Match(phoneInput, @"(^(\d\d\d)-(\d\d\d)-(\d\d\d\d)$)");
-            if (phoneValidate.Success)
+            bool repeat = true;
+            while (repeat)
             {
-                Console.WriteLine($"Your Phone Number is {phoneInput}!");
-            }
-            else
-            {
-                Console.WriteLine("Im sorry thats not a valid phone number!");
+                Console.WriteLine("\nPlease enter your Phone Number!");
+                string phoneInput = Console.ReadLine();
+                Match phoneValidate = Regex.Match(phoneInput, @"(^(\d\d\d)-(\d\d\d)-(\d\d\d\d)$)");
+                if (phoneValidate.Success)
+                {
+                    Console.WriteLine($"Your Phone Number is {phoneInput}!");
+                    repeat = false;
+                }
+                else
+                {
+                    Console.WriteLine("Im sorry thats not a valid phone number!");
+                }
             }
         }
 
         public static void Date()
         {
-            Console.WriteLine("Please enter a date!");
-            string dateInput = Console.ReadLine();
-            Match dateValidate = Regex.Match(dateInput, @"(^\d\d/{1}\d\d/{1}\d\d\d\d$)");
-            bool isDate = DateTime.TryParse(dateInput, out DateTime Datevalidated);
+            bool repeat = true;
+            while (repeat)
+            {
+                Console.WriteLine("\nPlease enter a date!");
+                string dateInput = Console.ReadLine();
+                Match dateValidate = Regex.Match(dateInput, @"(^\d\d/{1}\d\d/{1}\d\d\d\d$)");
+                bool isDate = DateTime.TryParse(dateInput, out DateTime Datevalidated);
 
-            if (dateValidate.Success && isDate == true)
-            {
-                Console.WriteLine($"The date you wrote is {dateInput}!");
+                if (dateValidate.Success && isDate == true)
+                {
+                    Console.WriteLine($"The date you wrote is {dateInput}!");
+                    repeat = false;
+                }
+                else
+                {
+                    Console.WriteLine("Im sorry thats not a valid date!");
+                }
             }
-            else
+        }
+        public static void HtmlTags()
+        {
+            bool repeat = true;
+            while (repeat)
             {
-                Console.WriteLine("Im sorry thats not a valid date!");
+                Console.WriteLine("\nPlease enter an html element!");
+                string htmlInput = Console.ReadLine();
+                Match htmlValidate = Regex.Match(htmlInput, @"((<[a-z]{1,5}[0-6]{0,1}>){1}[A-Za-z ]*(<{1}/{1}[a-z]{1,5}[0-6]{0,1}>)$)");
+
+
+                if (htmlValidate.Success)
+                {
+                    Console.WriteLine($"The HTML Element you wrote is {htmlInput}!");
+                    repeat = false;
+                }
+                else
+                {
+                    Console.WriteLine("Im sorry thats not a valid html element!");
+                }
             }
         }
     }
