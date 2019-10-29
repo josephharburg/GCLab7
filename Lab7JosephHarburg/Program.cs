@@ -49,7 +49,7 @@ namespace Lab7JosephHarburg
                 Console.WriteLine("Please enter your name!");
                 string nameInput = Console.ReadLine();
                 Match nameValidate = Regex.Match(nameInput, "(^[A-Z][a-z]{1,30})");
-                if (nameValidate.Success)
+                if (Regex.IsMatch(nameInput, "(^[A-Z][a-z]{1,30})"))
                 {
                     Console.WriteLine($"Hello {nameInput}!");
                     repeat = false;
@@ -88,7 +88,7 @@ namespace Lab7JosephHarburg
             {
                 Console.WriteLine("\nPlease enter your Phone Number!");
                 string phoneInput = Console.ReadLine();
-                Match phoneValidate = Regex.Match(phoneInput, @"(^(\d\d\d)-(\d\d\d)-(\d\d\d\d)$)");
+                Match phoneValidate = Regex.Match(phoneInput, @"(^([0-9]{3})-([0-9]{3})-([0-9]{4})$)");
                 if (phoneValidate.Success)
                 {
                     Console.WriteLine($"Your Phone Number is {phoneInput}!");
@@ -108,10 +108,8 @@ namespace Lab7JosephHarburg
             {
                 Console.WriteLine("\nPlease enter a date!");
                 string dateInput = Console.ReadLine();
-                Match dateValidate = Regex.Match(dateInput, @"(^\d\d/{1}\d\d/{1}\d\d\d\d$)");
-                bool isDate = DateTime.TryParse(dateInput, out DateTime Datevalidated);
-
-                if (dateValidate.Success && isDate == true)
+                Match dateValidate = Regex.Match(dateInput, @"((0[1-9]|1[0-9]|2[0-9]|3[0-1]){1}/{1}(0[1-9]|1[0-2]){1}/{1}([0-9]){4}$)");
+                if (dateValidate.Success)
                 {
                     Console.WriteLine($"The date you wrote is {dateInput}!");
                     repeat = false;
