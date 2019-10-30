@@ -56,7 +56,7 @@ namespace Lab7JosephHarburg
                 }
                 else
                 {
-                    Console.WriteLine("Im sorry thats not a valid name!");
+                    Console.WriteLine("Im sorry thats not a valid name! Please start with one Capital Letter.");
                     
                 }
             }
@@ -72,7 +72,7 @@ namespace Lab7JosephHarburg
                 Match emailValidate = Regex.Match(emailInput, @"([A-Za-z0-9]{5,30}@{1}[A-Za-z0-9]{5,10}\.{1}[A-Za-z0-9]{2,3}$)");
                 if (emailValidate.Success)
                 {
-                    Console.WriteLine($"Your Email is {emailInput}!");
+                    Console.WriteLine($"Your Email is {emailInput}.");
                     repeat = false;
                 }
                 else
@@ -91,12 +91,12 @@ namespace Lab7JosephHarburg
                 Match phoneValidate = Regex.Match(phoneInput, @"(^([0-9]{3})-([0-9]{3})-([0-9]{4})$)");
                 if (phoneValidate.Success)
                 {
-                    Console.WriteLine($"Your Phone Number is {phoneInput}!");
+                    Console.WriteLine($"Your Phone Number is {phoneInput}.");
                     repeat = false;
                 }
                 else
                 {
-                    Console.WriteLine("Im sorry thats not a valid phone number!");
+                    Console.WriteLine("Im sorry thats not a valid phone number! Please enter as 000-000-0000.");
                 }
             }
         }
@@ -111,12 +111,12 @@ namespace Lab7JosephHarburg
                 Match dateValidate = Regex.Match(dateInput, @"((0[1-9]|1[0-9]|2[0-9]|3[0-1]){1}/{1}(0[1-9]|1[0-2]){1}/{1}([0-9]){4}$)");
                 if (dateValidate.Success)
                 {
-                    Console.WriteLine($"The date you wrote is {dateInput}!");
+                    Console.WriteLine($"The date you wrote is {dateInput}.");
                     repeat = false;
                 }
                 else
                 {
-                    Console.WriteLine("Im sorry thats not a valid date!");
+                    Console.WriteLine("Im sorry thats not a valid date! Please Enter as dd/mm/yyyy.");
                 }
             }
         }
@@ -132,12 +132,12 @@ namespace Lab7JosephHarburg
 
                 if (htmlValidate.Success)
                 {
-                    Console.WriteLine($"The HTML Element you wrote is {htmlInput}!");
+                    Console.WriteLine($"The HTML Element you wrote is {htmlInput}.");
                     repeat = false;
                 }
                 else
                 {
-                    Console.WriteLine("Im sorry thats not a valid html element!");
+                    Console.WriteLine("Im sorry thats not a valid html element. Please try again.");
                 }
             }
         }
